@@ -7,6 +7,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
 
     const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+    withdrawTotalElement.innerText = currentWithdrawTotal;
 
     
 
@@ -14,16 +15,16 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const previousBalanceTotalString = balanceTotalElement.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
-    const currentBlanceTotal = previousBalanceTotal - newWithdrawAmount;
+    const currentBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+    balanceTotalElement.innerText = currentBalanceTotal;
     
-    
-    if(currentWithdrawTotal < currentBlanceTotal){
-        withdrawTotalElement.innerText = currentWithdrawTotal;
-        balanceTotalElement.innerText = currentBlanceTotal;
-    }
-    else{
-        alert('Insufficient balance');
-    }
+    // if(currentWithdrawTotal <= currentBalanceTotal){
+        
+        
+    // }
+    // else{
+    //     alert('Insufficient balance');
+    // }
 
     withdrawField.value = '';
 })
